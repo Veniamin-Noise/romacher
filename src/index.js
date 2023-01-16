@@ -1,4 +1,4 @@
-function morseCodeDecoder(code) {
+module.exports = function morseCodeDecoder(code) {
     let alfabeto = {
         '.-':     'a',
         '-...':   'b',
