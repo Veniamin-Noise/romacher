@@ -1,5 +1,4 @@
-module.exports = function morseCodeDecoder(code) {
-    let alfabeto = {
+const MORSE_TABLE = {
         '.-':     'a',
         '-...':   'b',
         '-.-.':   'c',
@@ -37,12 +36,20 @@ module.exports = function morseCodeDecoder(code) {
         '----.':  '9',
         '-----':  '0',
     }
+
+function decode(expr) {
+    let MORSE_TABLE = 
     
     let result = ''
     
-    morseCode = code.replace(/00/g, '').replace(/10/g, '.').replace(/11/g, '-').replace(/\*\*\*\*\*\*\*\*\*\*/g, ' ').split(' ')
+    morseCode = expr.replace(/00/g, '').replace(/10/g, '.').replace(/11/g, '-').replace(/\*\*\*\*\*\*\*\*\*\*/g, ' ').split(' ')
     for (let num = 0; num < morseCode.length; num++) {
-        result = result + alfabeto[morseCode[num]]
+        result = result + MORSE_TABLE[morseCode[num]]
     }
     return result
+}
+
+
+module.exports = {
+    decode
 }
