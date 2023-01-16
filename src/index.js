@@ -38,8 +38,6 @@ const MORSE_TABLE = {
     }
 
 function decode(expr) {
-    let MORSE_TABLE = 
-    
     let result = ''
     
     morseCode = expr.replace(/00/g, '').replace(/10/g, '.').replace(/11/g, '-').replace(/\*\*\*\*\*\*\*\*\*\*/g, ' ').split(' ')
